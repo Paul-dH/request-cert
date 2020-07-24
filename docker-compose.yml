@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # args:
+      #   GIT_REPO: ${GIT_REPO}
+    image: development/cert-app:dev
+    volumes:
+      - ./dest/:/code/dest
+      - ./src/cert.py:/code/cert.py
+    # environment:
+    #   - BRAND_PRIMARY=${BRAND_PRIMARY}
+    #   - BRAND_INFO=${BRAND_INFO}
+    #   - BRAND_SUCCESS=${BRAND_SUCCESS}
+    #   - BRAND_WARNING=${BRAND_WARNING}
+    #   - BRAND_DANGER=${BRAND_DANGER}
+    #   - BRAND_ROSE=${BRAND_ROSE}
+    #   - BRAND_INVERSE=${BRAND_INVERSE}
+    # ports:
+    #   - 8080:8080
